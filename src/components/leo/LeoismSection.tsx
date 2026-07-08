@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
-import MediaPlaceholder from "./MediaPlaceholder";
+
+const LEOISM_IMAGE_URL =
+  "https://res.cloudinary.com/yaklxlgc/image/upload/v1783540948/leo-club/leoism/group-photo.jpg";
 
 export default function LeoismSection() {
   return (
@@ -17,7 +20,14 @@ export default function LeoismSection() {
         transition={{ duration: 0.9 }}
         className="relative max-w-6xl mx-auto rounded-3xl overflow-hidden aspect-video"
       >
-        <MediaPlaceholder className="absolute inset-0 w-full h-full" />
+        <Image
+          src={LEOISM_IMAGE_URL}
+          alt="Leo Club of Thane North Star members celebrating together"
+          fill
+          className="object-cover"
+          sizes="(max-width: 1024px) 100vw, 1152px"
+          priority={false}
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
